@@ -104,10 +104,6 @@ select {
     transform: translateY(0);
 }
 
-/* Footer logo filter for dark background */
-footer img.invert {
-    filter: invert(1) brightness(2);
-}
 
 /* Floating sidebar animation */
 .fixed.right-4, .fixed.right-6 {
