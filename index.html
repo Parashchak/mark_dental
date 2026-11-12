@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MARK Dental Clinic — Преміум стоматологія</title>
+    <meta name="description" content="MARK Dental Clinic — сучасна стоматологічна клініка у Львові. Безболісне лікування, імплантація, ортодонтія та інші послуги.">
+    <link rel="icon" type="image/png" href="assets/img/Logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#FFD700',
+                        'gold-dark': '#C5A200',
+                        dark: '#111111',
+                        'dark-card': '#1A1A1A',
+                        'dark-border': '#2A2A2A',
+                        'gray-text': '#9CA3AF',
+                    },
+                    fontFamily: {
+                        gordita: ['Gordita', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        futura: ['Futura Medium', 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-white text-white font-gordita">
+
+    <!-- ========== HEADER ========== -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 bg-dark/95 backdrop-blur-md border-b border-dark-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 shrink-0">
+                    <img src="assets/img/Logo.png" alt="MARK Dental Clinic" class="h-12 w-auto">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="#about" class="nav-link text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors">Про нас</a>
+                    <a href="#services" class="nav-link text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors">Послуги</a>
+                    <a href="#team" class="nav-link text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors">Команда</a>
+                    <a href="#reviews" class="nav-link text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors">Відгуки</a>
+                    <a href="#contacts" class="nav-link text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors">Контакти</a>
+                </nav>
+
+                <!-- Phone + CTA -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="tel:0731682356" class="flex items-center gap-2 text-white hover:text-gold transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <span class="text-sm font-medium">073 168 23 56</span>
+                    </a>
+                    <a href="#appointment" class="bg-gold text-black px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-gold-dark transition-colors">
+                        Запис онлайн
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white p-2" aria-label="Меню">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path class="menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-dark border-t border-dark-border">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#about" class="block text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors py-2">Про нас</a>
+                <a href="#services" class="block text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors py-2">Послуги</a>
+                <a href="#team" class="block text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors py-2">Команда</a>
+                <a href="#reviews" class="block text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors py-2">Відгуки</a>
+                <a href="#contacts" class="block text-sm font-medium tracking-wider uppercase text-white hover:text-gold transition-colors py-2">Контакти</a>
+                <div class="pt-4 border-t border-dark-border">
+                    <a href="tel:0731682356" class="flex items-center gap-2 text-white py-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        <span class="text-sm font-medium">073 168 23 56</span>
+                    </a>
+                    <a href="#appointment" class="mt-4 block text-center bg-gold text-black px-6 py-3 rounded-lg text-sm font-bold hover:bg-gold-dark transition-colors">
+                        Запис онлайн
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="relative bg-dark min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background image overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/90 to-dark/40"></div>
+        <div class="absolute inset-0 hero-bg opacity-30"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-dark-card border border-dark-border rounded-full px-5 py-2 mb-8">
+                <span class="w-2 h-2 bg-gold rounded-full"></span>
+                <span class="text-sm text-gray-300">Преміум стоматологія у вашому місті</span>
+            </div>
+
+            <!-- Main heading -->
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight mb-8 max-w-3xl">
+                Ваша ідеальна<br>
+                посмішка<br>
+                починається<br>
+                з <span class="text-gold">MARK</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="text-gray-400 text-base lg:text-lg max-w-lg mb-10 leading-relaxed">
+                Сучасне обладнання, досвідчені спеціалісти та індивідуальний 
+                підхід до кожного пацієнта. Довіряйте здоров'я вашої посмішки 
+                професіоналам.
+            </p>
+
+            <!-- CTA buttons -->
+            <div class="flex flex-wrap gap-4">
+                <a href="tel:0731682356" class="inline-flex items-center gap-2 bg-gold text-black px-8 py-4 rounded-lg font-bold hover:bg-gold-dark transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    Безкоштовна консультація
+                </a>
+                <a href="#appointment" class="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-black transition-colors">
+                    Записатися на прийом
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FLOATING SOCIAL SIDEBAR ========== -->
+    <div class="fixed right-4 lg:right-6 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-3">
+        <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform" aria-label="Instagram">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="tel:0731682356" class="w-12 h-12 bg-dark-card border border-dark-border rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform hover:bg-gold hover:text-black hover:border-gold" aria-label="Зателефонувати">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        </a>
+    </div>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="bg-white py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Image -->
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=700&fit=crop" alt="Інтер'єр клініки MARK Dental" class="w-full h-[500px] lg:h-[600px] object-cover">
+                    </div>
+                    <!-- Badge overlay -->
+                    <div class="absolute bottom-6 left-6 bg-dark/90 backdrop-blur-sm rounded-xl px-5 py-4 flex items-center gap-3">
+                        <span class="text-3xl font-black text-gold">10+</span>
+                        <span class="text-sm text-white leading-tight">Років<br>досвіду</span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-0.5 bg-gold"></span>
+                        <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Про клініку</span>
+                    </div>
+
+                    <h2 class="text-4xl lg:text-5xl font-black text-black leading-tight mb-8">
+                        Стоматологія,<br>
+                        якій <span class="text-gold">довіряють</span>
+                    </h2>
+
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        MARK Dental Clinic — це сучасна стоматологічна клініка, де ваш 
+                        комфорт та здоров'я зубів є нашим головним пріоритетом. Ми 
+                        використовуємо найновіше обладнання від провідних світових 
+                        виробників та застосовуємо найсучасніші методики лікування.
+                    </p>
+
+                    <p class="text-gray-600 leading-relaxed mb-10">
+                        Наша команда — це висококваліфіковані лікарі, які постійно 
+                        підвищують свою кваліфікацію, відвідуючи міжнародні конференції та 
+                        семінари.
+                    </p>
+
+                    <!-- Feature cards -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-50 rounded-xl p-5 flex items-start gap-4">
+                            <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black text-sm">Безпека</h4>
+                                <p class="text-xs text-gray-500 mt-1">Стерильність та безпека на найвищому рівні</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-5 flex items-start gap-4">
+                            <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black text-sm">Гарантія</h4>
+                                <p class="text-xs text-gray-500 mt-1">Гарантія на всі види стоматологічних послуг</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-5 flex items-start gap-4">
+                            <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black text-sm">Зручний графік</h4>
+                                <p class="text-xs text-gray-500 mt-1">Працюємо щодня з 9:00 до 21:00</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-5 flex items-start gap-4">
+                            <div class="w-10 h-10 bg-gold/10 rounded-lg flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black text-sm">Без болю</h4>
+                                <p class="text-xs text-gray-500 mt-1">Безболісне лікування та сучасна анестезія</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section id="services" class="bg-dark py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section header -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <span class="w-8 h-0.5 bg-gold"></span>
+                    <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Наші послуги</span>
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-black leading-tight mb-6">
+                    Повний спектр<br>
+                    <span class="text-gold">стоматологічних послуг</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">
+                    Від профілактичного огляду до складної хірургії — ми забезпечимо вашу 
+                    посмішку на довгі роки.
+                </p>
+            </div>
+
+            <!-- Services grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1: Терапія -->
+                <div class="service-card bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Терапія</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Лікування карієсу, пульпіту та периодонтиту з використанням мікроскопа та найсучасніших матеріалів.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold">
+                        <span>$</span>
+                        <span>від 1 200 грн</span>
+                    </div>
+                </div>
+
+                <!-- Service 2: Імплантація -->
+                <div class="service-card bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Імплантація</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Встановлення імплантів від провідних виробників: Straumann, Nobel Biocare, MIS. Технології All-on-4 та All-on-6.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold">
+                        <span>$</span>
+                        <span>від 12 000 грн</span>
+                    </div>
+                </div>
+
+                <!-- Service 3: Ортодонтія -->
+                <div class="service-card bg-dark-card border border-gold/50 rounded-2xl p-8 hover:border-gold transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ортодонтія</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Брекет-системи, елайнери Invisalign та інші сучасні методи виправлення прикусу для дорослих і дітей.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold">
+                        <span>$</span>
+                        <span>від 15 000 грн</span>
+                    </div>
+                </div>
+
+                <!-- Service 4: Відбілювання -->
+                <div class="service-card bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Відбілювання</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Професійне відбілювання зубів за технологіями ZOOM та Beyond — до 8 тонів за один сеанс.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold">
+                        <span>$</span>
+                        <span>від 4 500 грн</span>
+                    </div>
+                </div>
+
+                <!-- Service 5: Протезування -->
+                <div class="service-card bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Протезування</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Вініри, коронки та мостоподібні конструкції з діоксиду цирконію, E-max та кераміки.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold">
+                        <span>$</span>
+                        <span>від 6 000 грн</span>
+                    </div>
+                </div>
+
+                <!-- Service 6: Хірургія -->
+                <div class="service-card bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold/50 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-gold/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                        <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L4.939 4.939m0 0A9.97 9.97 0 0112 2c2.773 0 5.267 1.124 7.071 2.939"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Хірургія</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Видалення зубів мудрості, кісткова пластика, синус-ліфтінг та інші хірургічні втручання під седацією.
+                    </p>
+                    <div class="flex items-center gap-2 text-gold text-sm font-bold">
+                        <span>$</span>
+                        <span>від 2 500 грн</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US / STATS ========== -->
+    <section id="stats" class="bg-white py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section header -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <span class="w-8 h-0.5 bg-gold"></span>
+                    <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Чому обирають нас</span>
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-black text-black leading-tight">
+                    Ми — ваш надійний<br>
+                    <span class="text-gold">партнер у здоров'і</span>
+                </h2>
+            </div>
+
+            <!-- Stats grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+                <div class="text-center">
+                    <div class="text-5xl lg:text-6xl font-black text-gold mb-3 stat-number" data-target="10">10+</div>
+                    <div class="text-lg font-bold text-black mb-2">Років на ринку</div>
+                    <p class="text-sm text-gray-500">Більше десяти років успішної практики та тисячі задоволених пацієнтів</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl lg:text-6xl font-black text-gold mb-3 stat-number" data-target="15">15</div>
+                    <div class="text-lg font-bold text-black mb-2">Спеціалістів</div>
+                    <p class="text-sm text-gray-500">Команда досвідчених лікарів різних спеціалізацій</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl lg:text-6xl font-black text-gold mb-3">5K+</div>
+                    <div class="text-lg font-bold text-black mb-2">Пацієнтів</div>
+                    <p class="text-sm text-gray-500">Тисячі щасливих пацієнтів, які повертаються до нас знову</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl lg:text-6xl font-black text-gold mb-3 italic">98%</div>
+                    <div class="text-lg font-bold text-black mb-2">Задоволені</div>
+                    <p class="text-sm text-gray-500">Рейтинг задоволеності пацієнтів за результатами опитувань</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TEAM SECTION ========== -->
+    <section id="team" class="bg-gray-50 py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <span class="w-8 h-0.5 bg-gold"></span>
+                    <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Наша команда</span>
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-black text-black leading-tight mb-6">
+                    Професіонали,<br>
+                    <span class="text-gold">яким довіряють</span>
+                </h2>
+                <p class="text-gray-500 max-w-xl mx-auto">
+                    Наші лікарі — це висококваліфіковані спеціалісти з багаторічним досвідом роботи та постійним прагненням до вдосконалення.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Team member 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face" alt="Лікар" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-lg font-bold text-black">Олександр Маркевич</h4>
+                        <p class="text-gold text-sm font-medium mt-1">Головний лікар, хірург-імплантолог</p>
+                        <p class="text-gray-500 text-sm mt-3">Досвід роботи — 15 років. Спеціалізація: імплантація та кісткова пластика.</p>
+                    </div>
+                </div>
+
+                <!-- Team member 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964ac31?w=400&h=400&fit=crop&crop=face" alt="Лікар" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-lg font-bold text-black">Наталія Коваленко</h4>
+                        <p class="text-gold text-sm font-medium mt-1">Лікар-ортодонт</p>
+                        <p class="text-gray-500 text-sm mt-3">Досвід роботи — 10 років. Спеціалізація: елайнери та брекет-системи.</p>
+                    </div>
+                </div>
+
+                <!-- Team member 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow group">
+                    <div class="h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&fit=crop&crop=face" alt="Лікар" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h4 class="text-lg font-bold text-black">Андрій Василенко</h4>
+                        <p class="text-gold text-sm font-medium mt-1">Лікар-терапевт, ендодонтист</p>
+                        <p class="text-gray-500 text-sm mt-3">Досвід роботи — 8 років. Спеціалізація: лікування каналів під мікроскопом.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REVIEWS SECTION ========== -->
+    <section id="reviews" class="bg-dark py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section header -->
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <span class="w-8 h-0.5 bg-gold"></span>
+                    <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Відгуки</span>
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-black leading-tight mb-6">
+                    Що кажуть наші<br>
+                    <span class="text-gold italic">пацієнти</span>
+                </h2>
+                <p class="text-gray-400 max-w-xl mx-auto">
+                    Реальні відгуки від реальних пацієнтів — наша найкраща рекомендація.
+                </p>
+            </div>
+
+            <!-- Reviews grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold/30 transition-colors">
+                    <div class="flex gap-1 mb-6">
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8 italic">
+                        "Нарешті знайшла свого стоматолога! Лікування проходило абсолютно безболісно, а результат перевершив всі очікування. Дуже дякую команді MARK Dental Clinic!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">ОВ</div>
+                        <div>
+                            <div class="font-bold text-white">Ольга Василенко</div>
+                            <div class="text-gray-500 text-xs">Відбілювання + вініри</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold/30 transition-colors">
+                    <div class="flex gap-1 mb-6">
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8 italic">
+                        "Встановлювали імпланти у MARK — все пройшло чудово. Лікар пояснив кожен крок, відчувався максимальний професіоналізм. Рекомендую всім!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm">ІК</div>
+                        <div>
+                            <div class="font-bold text-white">Ігор Коваленко</div>
+                            <div class="text-gray-500 text-xs">Імплантація зубів</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-8 hover:border-gold/30 transition-colors">
+                    <div class="flex gap-1 mb-6">
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                        <span class="text-gold text-lg">★</span>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed mb-8 italic">
+                        "Привела дитину на перший візит — лікар знайшла підхід миттєво. Тепер донька з задоволенням ходить до стоматолога. Чудова клініка з чудовими людьми!"
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-sm">МШ</div>
+                        <div>
+                            <div class="font-bold text-white">Марина Шевченко</div>
+                            <div class="text-gray-500 text-xs">Дитяча стоматологія</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== APPOINTMENT FORM ========== -->
+    <section id="appointment" class="bg-dark py-20 lg:py-28 border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Left side: info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-0.5 bg-gold"></span>
+                        <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Запис на прийом</span>
+                    </div>
+
+                    <h2 class="text-3xl lg:text-5xl font-black leading-tight mb-8">
+                        Запишіться на<br>
+                        <span class="text-gold">безкоштовну<br>консультацію</span>
+                    </h2>
+
+                    <p class="text-gray-400 leading-relaxed mb-10">
+                        Зв'яжіться з нами зручним для вас способом. Ми відповімо 
+                        протягом 15 хвилин у робочий час.
+                    </p>
+
+                    <!-- Contact buttons -->
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="tel:0731682356" class="inline-flex items-center gap-2 bg-dark-card border border-dark-border rounded-full px-6 py-3 text-white hover:border-gold transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span class="text-sm font-medium">Зателефонувати</span>
+                        </a>
+                        <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-dark-card border border-dark-border rounded-full px-6 py-3 text-white hover:border-gold transition-colors">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                            <span class="text-sm font-medium">Instagram</span>
+                        </a>
+                    </div>
+
+                    <!-- Schedule -->
+                    <div class="bg-gold/10 border border-gold/20 rounded-xl px-6 py-4 inline-flex items-center gap-3">
+                        <svg class="w-5 h-5 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        <span class="text-sm text-white"><strong>Пн — Нд:</strong> 09:00 — 21:00 | Без вихідних</span>
+                    </div>
+                </div>
+
+                <!-- Right side: form -->
+                <div class="bg-dark-card border border-dark-border rounded-2xl p-8 lg:p-10">
+                    <h3 class="text-2xl font-bold mb-2">Онлайн запис</h3>
+                    <p class="text-gray-400 text-sm mb-8">Заповніть форму і ми зв'яжемося з вами</p>
+
+                    <form id="contact-form" class="space-y-5">
+                        <div>
+                            <input type="text" name="name" placeholder="Ваше ім'я" required
+                                class="w-full bg-dark border border-dark-border rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-gold focus:outline-none transition-colors text-sm">
+                        </div>
+                        <div>
+                            <input type="tel" name="phone" placeholder="Номер телефону" required
+                                class="w-full bg-dark border border-dark-border rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-gold focus:outline-none transition-colors text-sm">
+                        </div>
+                        <div>
+                            <select name="service" 
+                                class="w-full bg-dark border border-dark-border rounded-xl px-5 py-4 text-gray-500 focus:border-gold focus:outline-none transition-colors text-sm appearance-none cursor-pointer">
+                                <option value="" disabled selected>Оберіть послугу</option>
+                                <option value="therapy">Терапія</option>
+                                <option value="implantation">Імплантація</option>
+                                <option value="orthodontics">Ортодонтія</option>
+                                <option value="whitening">Відбілювання</option>
+                                <option value="prosthetics">Протезування</option>
+                                <option value="surgery">Хірургія</option>
+                                <option value="consultation">Консультація</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea name="comment" placeholder="Коментар (необов'язково)" rows="3"
+                                class="w-full bg-dark border border-dark-border rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:border-gold focus:outline-none transition-colors text-sm resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gold text-black py-4 rounded-xl font-bold text-base hover:bg-gold-dark transition-colors">
+                            Записатися на прийом
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== INSTAGRAM SECTION ========== -->
+    <section id="instagram" class="bg-white py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section header -->
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-3 mb-6">
+                    <span class="w-8 h-0.5 bg-gold"></span>
+                    <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Ми в Instagram</span>
+                </div>
+                <h2 class="text-3xl lg:text-5xl font-black text-black leading-tight mb-6">
+                    Слідкуйте за нами<br>
+                    в <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="text-gold hover:underline">@mark.dental_clinic</a>
+                </h2>
+                <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-black font-medium hover:text-gold transition-colors">
+                    Підписатися на Instagram
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </a>
+            </div>
+
+            <!-- Instagram grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="group rounded-2xl overflow-hidden aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=500&fit=crop" alt="Інтер'єр клініки" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </a>
+                <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="group rounded-2xl overflow-hidden aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&h=500&fit=crop" alt="Посмішка пацієнта" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </a>
+                <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="group rounded-2xl overflow-hidden aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&h=500&fit=crop" alt="Обладнання клініки" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </a>
+                <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="group rounded-2xl overflow-hidden aspect-[4/5]">
+                    <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=400&h=500&fit=crop" alt="Процедура лікування" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACTS SECTION ========== -->
+    <section id="contacts" class="bg-white py-20 lg:py-28 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Left: Contact info -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-0.5 bg-gold"></span>
+                        <span class="text-gold text-xs font-bold tracking-[0.2em] uppercase">Контакти</span>
+                    </div>
+
+                    <h2 class="text-3xl lg:text-5xl font-black text-black leading-tight mb-12">
+                        Як нас<br>
+                        <span class="text-gold">знайти</span>
+                    </h2>
+
+                    <div class="space-y-8">
+                        <!-- Address -->
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black mb-1">Адреса</h4>
+                                <p class="text-gray-600 text-sm">м. Львів, вул. Драгана 9</p>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black mb-1">Телефон</h4>
+                                <a href="tel:0731682356" class="text-gray-600 text-sm hover:text-gold transition-colors">073 168 23 56</a>
+                            </div>
+                        </div>
+
+                        <!-- Schedule -->
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black mb-1">Графік роботи</h4>
+                                <p class="text-gray-600 text-sm">Пн — Нд: 09:00 — 21:00</p>
+                                <p class="text-gray-600 text-sm">Без вихідних</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center shrink-0">
+                                <svg class="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-black mb-1">Email</h4>
+                                <a href="mailto:markdentalclinic26@gmail.com" class="text-gray-600 text-sm hover:text-gold transition-colors">markdentalclinic26@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social icons -->
+                    <div class="flex gap-3 mt-10">
+                        <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gold hover:text-black transition-colors" aria-label="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-gold hover:text-black transition-colors" aria-label="Facebook">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Map -->
+                <div class="rounded-2xl overflow-hidden shadow-lg h-[500px] lg:h-auto">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.7!2d24.0!3d49.84!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z0JvRjNCy0ZbQsg!5e0!3m2!1suk!2sua!4v1" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 500px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Розташування Mark Dental Clinic">
+                    </iframe>
+                    <div class="bg-white p-4 text-center">
+                        <a href="https://maps.app.goo.gl/d1Xp9Hjrzb4SNcyB7?g_st=iw" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-gold font-medium hover:underline text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            Прокласти маршрут
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-dark py-16 border-t border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Logo & description -->
+                <div class="lg:col-span-1">
+                    <a href="#" class="inline-block mb-6">
+                        <img src="assets/img/Logo.png" alt="MARK Dental Clinic" class="h-16 w-auto invert brightness-200">
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Сучасна стоматологічна клініка з найновішим обладнанням та досвідченою командою лікарів. Ваше здоров'я та комфорт — наш пріоритет.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://instagram.com/mark.dental_clinic?exln=dDllMWRzbW1zN3Y5" target="_blank" rel="noopener" class="w-9 h-9 bg-dark-card border border-dark-border rounded-full flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition-colors" aria-label="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        </a>
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="w-9 h-9 bg-dark-card border border-dark-border rounded-full flex items-center justify-center text-gray-400 hover:text-gold hover:border-gold transition-colors" aria-label="Facebook">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Services column -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6">Послуги</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 text-sm hover:text-gold transition-colors">Терапія</a></li>
+                        <li><a href="#services" class="text-gray-400 text-sm hover:text-gold transition-colors">Імплантація</a></li>
+                        <li><a href="#services" class="text-gray-400 text-sm hover:text-gold transition-colors">Ортодонтія</a></li>
+                        <li><a href="#services" class="text-gray-400 text-sm hover:text-gold transition-colors">Відбілювання</a></li>
+                        <li><a href="#services" class="text-gray-400 text-sm hover:text-gold transition-colors">Протезування</a></li>
+                        <li><a href="#services" class="text-gray-400 text-sm hover:text-gold transition-colors">Хірургія</a></li>
+                    </ul>
+                </div>
+
+                <!-- Clinic column -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6">Клініка</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 text-sm hover:text-gold transition-colors">Про нас</a></li>
+                        <li><a href="#team" class="text-gray-400 text-sm hover:text-gold transition-colors">Наша команда</a></li>
+                        <li><a href="#reviews" class="text-gray-400 text-sm hover:text-gold transition-colors">Відгуки</a></li>
+                        <li><a href="#contacts" class="text-gray-400 text-sm hover:text-gold transition-colors">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacts column -->
+                <div>
+                    <h4 class="text-white font-bold text-sm uppercase tracking-wider mb-6">Контакти</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="tel:0731682356" class="text-gray-400 text-sm hover:text-gold transition-colors">073 168 23 56</a>
+                        </li>
+                        <li>
+                            <a href="mailto:markdentalclinic26@gmail.com" class="text-gray-400 text-sm hover:text-gold transition-colors">markdentalclinic26@gmail.com</a>
+                        </li>
+                        <li class="text-gray-400 text-sm">
+                            м. Львів,<br>
+                            вул. Драгана, 9
+                        </li>
+                        <li class="text-gray-400 text-sm">
+                            Пн — Нд: 09:00 — 21:00
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="pt-8 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-xs">© 2024 MARK Dental Clinic. Всі права захищені.</p>
+                <p class="text-gray-500 text-xs">Ліцензія МОЗ України</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== FORM SUCCESS MODAL ========== -->
+    <div id="success-modal" class="fixed inset-0 z-[999] hidden items-center justify-center bg-black/60 backdrop-blur-sm">
+        <div class="bg-dark-card border border-dark-border rounded-2xl p-10 max-w-md mx-4 text-center">
+            <div class="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3">Дякуємо!</h3>
+            <p class="text-gray-400 mb-8">Ваша заявка успішно відправлена. Ми зв'яжемося з вами найближчим часом.</p>
+            <button id="close-modal" class="bg-gold text-black px-8 py-3 rounded-xl font-bold hover:bg-gold-dark transition-colors">
+                Закрити
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

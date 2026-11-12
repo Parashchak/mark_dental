@@ -1,0 +1,178 @@
+/* ========== MARK Dental Clinic — Custom Styles ========== */
+
+/* Reset & Base */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Hero background */
+.hero-bg {
+    background-image: url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #111111;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #FFD700;
+}
+
+/* Selection */
+::selection {
+    background: #FFD700;
+    color: #000;
+}
+
+/* Nav link active state */
+.nav-link.active {
+    color: #FFD700;
+    position: relative;
+}
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #FFD700;
+}
+
+/* Header shadow on scroll */
+.header-scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Service card hover effect */
+.service-card {
+    transition: all 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Select arrow */
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239CA3AF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 16px;
+}
+
+/* Stats number animation */
+.stat-number {
+    transition: color 0.3s ease;
+}
+.stat-number:hover {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer logo filter for dark background */
+footer img.invert {
+    filter: invert(1) brightness(2);
+}
+
+/* Floating sidebar animation */
+.fixed.right-4, .fixed.right-6 {
+    animation: fadeInRight 0.8s ease 1s both;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate(20px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
+/* Map container */
+#contacts iframe {
+    border-radius: 16px 16px 0 0;
+}
+
+/* Mobile menu transition */
+#mobile-menu {
+    transition: max-height 0.3s ease;
+}
+
+/* Button pulse effect on CTA */
+@keyframes pulse-gold {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(255, 215, 0, 0);
+    }
+}
+
+.pulse-gold {
+    animation: pulse-gold 2s infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-bg {
+        background-position: right center;
+    }
+    
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #hero h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Print styles */
+@media print {
+    header, .fixed, footer {
+        display: none !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+    }
+}
